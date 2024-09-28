@@ -1,0 +1,13 @@
+<div *ngIf="!isLoading" class="row">
+  <div *ngFor="let product of data" class="col-12 col-md-6 col-lg-4">
+    <app-product-card
+      [title]="product.title"
+      [price]="product.price"
+      [category]="product.category"
+      [image]="product.image"
+      [id]="product.id"
+    ></app-product-card>
+  </div>
+</div>
+
+<app-loading *ngIf="isLoading"></app-loading>
