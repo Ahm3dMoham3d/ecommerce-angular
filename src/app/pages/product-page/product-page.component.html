@@ -1,1 +1,24 @@
-<p>product-page works!</p>
+<div class="row">
+  <div class="col-12 col-md-6">
+    <img class="img-fluid" [src]="product.image" alt="" />
+  </div>
+  <div class="col-12 col-md-6">
+    <h1>{{ product.title }}</h1>
+    <h2>{{ product.price }}$</h2>
+    <p>{{ product.description }}</p>
+    <h4>Rate : {{ product.rating.rate }} Star</h4>
+    <button
+      (click)="
+        addToCart({
+          id: product.id,
+          title: product.title,
+          image: product.image,
+          count: 1
+        })
+      "
+      class="btn btn-primary"
+    >
+      Add to cart
+    </button>
+  </div>
+</div>
